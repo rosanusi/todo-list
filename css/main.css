@@ -1,0 +1,248 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Colours */
+/* Typography */
+/* Declaring system font as font-face */
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma"); }
+/* Transition Mixin */
+/* opacity Mixin */
+/* Unit Size conversion to em */
+/* General */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  background-color: #E6E8EC;
+  color: #201D1D;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; }
+
+.todoWrap {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem; }
+  .todoWrap::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+.todoHeader {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+  .todoHeader::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+h1 {
+  width: 100%;
+  position: relative;
+  margin-top: 5rem;
+  font-size: 2rem;
+  font-weight: 600; }
+
+h2 {
+  width: 100%;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 600; }
+
+form {
+  margin-top: 2.5rem;
+  float: left;
+  display: block;
+  margin-right: 1.9374068554%;
+  width: 40.5365126677%; }
+  form:last-child {
+    margin-right: 0; }
+  form input {
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem; }
+    form input:focus {
+      outline: 0;
+      border-bottom: 1px solid #bfbfbf; }
+  form .inputError {
+    margin-top: 0.5rem;
+    color: #DD4B43;
+    display: none; }
+    form .inputError.show {
+      display: block; }
+
+.archiveBlock {
+  display: none; }
+  .archiveBlock .title {
+    overflow: hidden;
+    position: relative; }
+    .archiveBlock .title .clearArchive {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      color: #F26954;
+      cursor: pointer; }
+      .archiveBlock .title .clearArchive:hover {
+        color: #201D1D; }
+
+/* Animate */
+@keyframes displayAnimate {
+  /* You could think of as "step 1" */
+  0% {
+    opacity: 0; }
+  /* You could think of as "step 2" */
+  100% {
+    opacity: 1; } }
+@keyframes showSuccess {
+  /* You could think of as "step 1" */
+  0% {
+    opacity: 0; }
+  /* You could think of as "step 2" */
+  100% {
+    opacity: 1; } }
+.todoList, .doneList {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden; }
+  .todoList::after, .doneList::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .todoList .taskCard, .doneList .taskCard {
+    float: left;
+    display: block;
+    margin-right: 1.9374068554%;
+    width: 23.5469448584%;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 1.625rem;
+    border-radius: 4px; }
+    .todoList .taskCard:last-child, .doneList .taskCard:last-child {
+      margin-right: 0; }
+    .todoList .taskCard:first-child, .doneList .taskCard:first-child {
+      animation: displayAnimate .9s; }
+    .todoList .taskCard:nth-child(4n), .doneList .taskCard:nth-child(4n) {
+      margin-right: 0; }
+    .todoList .taskCard .taskTitle, .doneList .taskCard .taskTitle {
+      vertical-align: middle;
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      padding: 1.5rem;
+      font-size: 1.125rem;
+      height: 8.5rem;
+      overflow: hidden; }
+    .todoList .taskCard .actionBlock, .doneList .taskCard .actionBlock {
+      text-align: right;
+      padding: 0.5rem 0.75rem; }
+      .todoList .taskCard .actionBlock .doneIcon, .todoList .taskCard .actionBlock .deleteIcon, .doneList .taskCard .actionBlock .doneIcon, .doneList .taskCard .actionBlock .deleteIcon {
+        font-size: 0;
+        display: inline-block;
+        margin-left: 0.75rem;
+        cursor: pointer; }
+      .todoList .taskCard .actionBlock .doneIcon:hover svg #ListBlock, .doneList .taskCard .actionBlock .doneIcon:hover svg #ListBlock {
+        fill: #38D278; }
+      .todoList .taskCard .actionBlock .deleteIcon:hover svg #ListBlock, .doneList .taskCard .actionBlock .deleteIcon:hover svg #ListBlock {
+        fill: #F83756; }
+    .todoList .taskCard.completed, .doneList .taskCard.completed {
+      background-color: #e6f9eb; }
+      .todoList .taskCard.completed .taskTitle, .doneList .taskCard.completed .taskTitle {
+        color: #28A947;
+        text-decoration: line-through; }
+      .todoList .taskCard.completed .actionBlock .doneIcon, .todoList .taskCard.completed .actionBlock .deleteIcon, .doneList .taskCard.completed .actionBlock .doneIcon, .doneList .taskCard.completed .actionBlock .deleteIcon {
+        display: none; }
+      .todoList .taskCard.completed .actionBlock .completedText, .doneList .taskCard.completed .actionBlock .completedText {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #28A947; }
+
+.doneList {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem; }
+
+.notification {
+  position: fixed;
+  max-width: 37.5rem;
+  width: 100%;
+  bottom: 1.5rem;
+  padding: 1.25rem;
+  padding-left: 64px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 28px 0 rgba(0, 0, 0, 0.13);
+  border-radius: 108px;
+  z-index: 100;
+  display: none; }
+  .notification.success {
+    background: #fff url(../img/success-icon.svg) 12px 14px no-repeat;
+    color: #28A947; }
+
+/* Helper Classes */
+.display {
+  display: block; }
+
+/*# sourceMappingURL=main.css.map */

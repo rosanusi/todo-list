@@ -1,0 +1,73 @@
+/* Colours */
+$primaryColor: #F65241;
+$lightColor: #808080;
+$borderColor: #ccc;
+$bodyColor: #201D1D;
+$bkgrndColor: #E6E8EC;
+$successColor: #28A947;
+$errorColor: #DD4B43;
+$linkColor: #F26954;
+
+
+/* Typography */
+
+	/* Declaring system font as font-face */
+	@font-face {
+	  font-family: system;
+	  font-style: normal;
+	  font-weight: 300;
+	  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+	}
+
+
+
+/* Transition Mixin */
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+/* opacity Mixin */
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+
+
+
+/* Unit Size conversion to em */
+
+$browser-context: 16; // Default
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+
+
+
+
+/* General */
+
+@mixin border-radius($radius: 2px) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+
+
+
+
+
